@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified">
+	<xsd:element name="report">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="config">
+					<xsd:complexType>
+						<xsd:attribute name="src" type="xsd:string" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="files">
+					<xsd:complexType>
+						<xsd:sequence maxOccurs="unbounded">
+							<xsd:element name="file">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="oldName" type="xsd:string"/>
+										<xsd:element name="newName" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="executionTime">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:integer">
+								<xsd:attribute name="unit" type="xsd:string" use="required"/>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="timestamp" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

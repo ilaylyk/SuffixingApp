@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+		</Console>
+		<RollingFile name="RollingFile" fileName="src/main/resources/logs/file_controller.log"
+				filePattern="src/main/resources/logs/$${date:yyyy-MM}/file_controller-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout>
+				<pattern>%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="5MB" />
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="JSON" fileName="src/main/resources/logs/file_controller.json"
+                filePattern="src/main/resources/logs/$${date:yyyy-MM}/file_controller-%d{MM-dd-yyyy}-%i.json.gz">
+			<JsonLayout complete="false" compact="false" includeTimeMillis="true">
+				<KeyValuePair key="@timestamp" value="$${date:yyy-MM-dd HH:mm:ss.SSS}" />	   
+			</JsonLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="5MB" />
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.epam.upskill.start.FileController" level="trace" additivity="false">
+			<AppenderRef ref="RollingFile"/>
+			<AppenderRef ref="JSON"/>
+		</Logger>
+		<Logger name="com.epam.upskill.service.file.FileWorker" level="trace" additivity="false">
+			<AppenderRef ref="RollingFile"/>
+			<AppenderRef ref="JSON"/>
+		</Logger>
+		<Logger name="com.epam.upskill.util.validate.FileChecker" level="debug" additivity="false">
+			<AppenderRef ref="RollingFile"/>
+			<AppenderRef ref="JSON"/>
+		</Logger>
+		<Logger name="com.epam.upskill.util.сonfig.ConfigReader" level="error" additivity="false">
+			<AppenderRef ref="RollingFile"/>
+			<AppenderRef ref="JSON"/>
+		</Logger>
+		<Root level="error">
+			<AppenderRef ref="Console"/>
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<report>
+    <config src="src\main\resources\config.xml"/>
+    <files>
+        <file>
+            <oldName>src\main\resources\files\first_file.txt</oldName>
+            <newName>src\main\resources\files\sfx_first_file.txt</newName>
+        </file>
+        <file>
+            <oldName>src\main\resources\files\file.txt</oldName>
+            <newName>src\main\resources\files\sfx_file.txt</newName>
+        </file>
+        <file>
+            <oldName>src\main\resources\files\info_file.txt</oldName>
+            <newName>src\main\resources\files\sfx_info_file.txt</newName>
+        </file>
+    </files>
+    <executionTime unit="ms">418</executionTime>
+    <timestamp>Tue Jul 13 10:45:20 MSK 2021</timestamp>
+</report>
