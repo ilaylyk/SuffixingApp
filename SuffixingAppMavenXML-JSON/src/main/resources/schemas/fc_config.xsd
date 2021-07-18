@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified">
+	<xsd:element name="configuration">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="suffix" type="xsd:string"/>     
+				<xsd:element name="fileNames">
+					<xsd:complexType>
+						<xsd:sequence maxOccurs="unbounded">
+							<xsd:element name="fileName" type="xsd:string"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <suffix>sfx_</suffix>
+  <fileNames>
+    <fileName>first_file.txt</fileName>
+	<fileName>file.txt</fileName>
+    <fileName>info_file.txt</fileName>
+  </fileNames>
+</configuration>
